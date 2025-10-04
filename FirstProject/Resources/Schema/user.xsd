@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns:user="http://www.tibco.com/schemas/FirstProject/Resources/Schema/user"
+	 xmlns:country="http://www.tibco.com/schemas/FirstProject/Resources/Schema/country"
+	 xmlns:product="http://www.tibco.com/schemas/FirstProject/Resources/Schema/product"
+	 targetNamespace="http://www.tibco.com/schemas/FirstProject/Resources/Schema/user"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.tibco.com/schemas/FirstProject/Resources/Schema/product" schemaLocation="product.xsd"/>
+	<xs:import namespace="http://www.tibco.com/schemas/FirstProject/Resources/Schema/country" schemaLocation="country.xsd"/>
+	<xs:element name="user">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="userName" type="xs:string"/>
+				<xs:element name="userId" type="xs:string"/>
+				<xs:element ref="product:product" maxOccurs="unbounded"/>
+				<xs:element ref="country:countryName"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
