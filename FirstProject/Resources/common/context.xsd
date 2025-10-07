@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns:context="http://www.tibco.com/schemas/FirstProject/Resources/Common/context"
+	 targetNamespace="http://www.tibco.com/schemas/FirstProject/Resources/Common/context"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xs:element name="context">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="corelationId" type="xs:string"/>
+				<xs:element name="parentCorelationId" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

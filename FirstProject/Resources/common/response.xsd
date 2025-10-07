@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns:response="http://www.tibco.com/schemas/FirstProject/Resources/common/response"
+	 xmlns:context="http://www.tibco.com/schemas/FirstProject/Resources/Schema/context"
+	 targetNamespace="http://www.tibco.com/schemas/FirstProject/Resources/common/response"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.tibco.com/schemas/FirstProject/Resources/Schema/context" schemaLocation="context.xsd"/>
+	<xs:element name="response">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="context:context"/>
+				<xs:element ref="response:responseMessage"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="responseMessage">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="status">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="SUCCESS" />
+							<xs:enumeration value="FAILURE" />
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="response" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

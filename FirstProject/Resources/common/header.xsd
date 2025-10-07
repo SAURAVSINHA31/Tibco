@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns:header="http://www.tibco.com/schemas/FirstProject/Resources/Common/header"
+	 xmlns:context="http://www.tibco.com/schemas/FirstProject/Resources/Common/context"
+	 targetNamespace="http://www.tibco.com/schemas/FirstProject/Resources/Common/header"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.tibco.com/schemas/FirstProject/Resources/Common/context" schemaLocation="context.xsd"/>
+	<xs:element name="header">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="context:context"/>
+				<xs:element name="timestamp" type="xs:dateTime"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
